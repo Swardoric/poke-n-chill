@@ -48,19 +48,19 @@ export default function About() {
           <motion.div className="about-features" variants={fadeUp} custom={4}>
             <div className="about-feature">
               <span className="feature-icon">🌿</span>
-              <span>Fait Maison</span>
+              <span>Fait maison</span>
             </div>
             <div className="about-feature">
               <span className="feature-icon">🥗</span>
-              <span>Options Végétariennes</span>
+              <span>Options végétariennes</span>
             </div>
             <div className="about-feature">
               <span className="feature-icon">🔥</span>
-              <span>Cuisine Traditionnelle</span>
+              <span>Cuisine traditionnelle</span>
             </div>
             <div className="about-feature">
               <span className="feature-icon">💚</span>
-              <span>Alimentation Saine</span>
+              <span>Produits frais</span>
             </div>
           </motion.div>
         </motion.div>
