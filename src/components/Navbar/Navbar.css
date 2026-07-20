@@ -1,0 +1,103 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.4s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-sm);
+  padding: 10px 40px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  transition: color 0.4s;
+}
+
+.navbar.scrolled .navbar-brand {
+  color: var(--green-600);
+}
+
+.navbar-brand .brand-icon {
+  font-size: 1.8rem;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.navbar-links a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.3s;
+  position: relative;
+}
+
+.navbar.scrolled .navbar-links a {
+  color: var(--text-secondary);
+}
+
+.navbar-links a:hover {
+  color: var(--pink-400);
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--pink-400);
+  transition: width 0.3s;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+.navbar-cta {
+  padding: 10px 24px !important;
+  background: var(--pink-400) !important;
+  color: var(--white) !important;
+  border-radius: 50px;
+  font-weight: 600 !important;
+  transition: transform 0.3s, box-shadow 0.3s !important;
+}
+
+.navbar-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255, 102, 147, 0.4);
+}
+
+.navbar-cta::after {
+  display: none !important;
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+}

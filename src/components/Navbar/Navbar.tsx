@@ -1,0 +1,38 @@
+import { useState, useEffect } from 'react'
+import { GiNoodles } from 'react-icons/gi'
+import { MENU_URL, NAV_LINKS } from '../../data/constants'
+import './Navbar.css'
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  return (
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <a href="#" className="navbar-brand">
+        <GiNoodles className="brand-icon" />
+        Phở 520
+      </a>
+      <div className="navbar-links">
+        {NAV_LINKS.map((link) => (
+          <a key={link.href} href={link.href}>
+            {link.label}
+          </a>
+        ))}
+        <a
+          href={MENU_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="navbar-cta"
+        >
+          Voir la Carte
+        </a>
+      </div>
+    </nav>
+  )
+}

@@ -1,0 +1,151 @@
+.info {
+  padding: 120px 40px;
+  background: var(--white);
+}
+
+.info-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.info-card {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  box-shadow: var(--shadow-sm);
+}
+
+.info-card .section-badge {
+  margin-bottom: 24px;
+}
+
+.info-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+}
+
+.hours-badge {
+  background: var(--green-100);
+  color: var(--green-600);
+}
+
+.contact-badge {
+  background: var(--pink-100);
+  color: var(--pink-500);
+}
+
+.hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.hours-item:last-child {
+  border-bottom: none;
+}
+
+.hours-day {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.hours-time {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.hours-closed {
+  color: var(--pink-500);
+  font-weight: 600;
+  font-size: 0.85rem;
+  background: var(--pink-50);
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.contact-icon.green {
+  background: var(--green-100);
+  color: var(--green-500);
+}
+
+.contact-icon.pink {
+  background: var(--pink-100);
+  color: var(--pink-500);
+}
+
+.contact-details h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.contact-details p {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.contact-details a {
+  color: var(--green-500);
+  transition: color 0.3s;
+}
+
+.contact-details a:hover {
+  color: var(--pink-500);
+}
+
+@media (max-width: 1024px) {
+  .info-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .info {
+    padding: 80px 20px;
+  }
+
+  .info-card {
+    padding: 32px 24px;
+  }
+}
