@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <div className="footer-brand">🍜 Phở 520</div>
+        <div className="footer-brand">🍜 Poke n Chill</div>
         <p className="footer-tagline">
           Cuisine Vietnamienne &amp; Thaïlandaise — Paris 15e
         </p>
@@ -19,7 +19,7 @@ export default function Footer() {
         </div>
         <div className="footer-divider" />
         <p className="footer-copy">
-          © {new Date().getFullYear()} Phở 520 — Tous droits réservés
+          © {new Date().getFullYear()} Poke n Chill — Tous droits réservés
         </p>
         <div className="footer-payment">
           <span>💶 Espèces</span>

@@ -14,7 +14,7 @@ export default function Map() {
         variants={fadeUp}
       >
         <iframe
-          title="Phở 520 — Plan"
+          title="Poke n Chill — Plan"
           src={RESTAURANT.mapEmbedUrl}
           allowFullScreen
           loading="lazy"

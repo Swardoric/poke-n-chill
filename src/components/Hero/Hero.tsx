@@ -37,7 +37,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          Phở 520
+          Poke n Chill
           <span>Cuisine Vietnamienne Authentique</span>
         </motion.h1>
 

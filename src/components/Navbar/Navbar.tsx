@@ -16,7 +16,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <a href="#" className="navbar-brand">
         <GiNoodles className="brand-icon" />
-        Phở 520
+        Poke n Chill
       </a>
       <div className="navbar-links">
         {NAV_LINKS.map((link) => (

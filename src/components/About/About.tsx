@@ -16,7 +16,7 @@ export default function About() {
           variants={fadeUp}
         >
           <div className="about-image">
-            <img src={interiorImg} alt="Intérieur du restaurant Phở 520" />
+            <img src={interiorImg} alt="Intérieur du restaurant Poke n Chill" />
           </div>
           <div className="about-image-accent" />
           <div className="about-image-accent-2" />
