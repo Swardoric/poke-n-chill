@@ -185,7 +185,7 @@
 }
 
 .menu-tab.active {
-  border-color: var(--pink-400);
+  border-color: transparent;
   color: var(--pink-600);
   background: var(--pink-50);
 }
@@ -234,7 +234,7 @@
 .menu-card-badge {
   position: absolute;
   top: 12px;
-  right: 12px;
+  left: 12px;
   padding: 4px 10px;
   border-radius: 50px;
   background: linear-gradient(135deg, var(--green-100), var(--green-200));
@@ -243,6 +243,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.3px;
+  z-index: 1;
 }
 
 .menu-card-emoji {
