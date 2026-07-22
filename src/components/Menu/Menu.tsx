@@ -98,9 +98,9 @@ function SideMenu() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
               >
-                {item.popular && <span className="menu-card-badge">⭐ Populaire</span>}
                 <div className="menu-card-emoji">{item.emoji}</div>
                 <div className="menu-card-body">
+                  {item.popular && <span className="menu-card-badge">⭐ Populaire</span>}
                   <div className="menu-card-header">
                     <h3>{item.name}</h3>
                     <span className="menu-card-price">
