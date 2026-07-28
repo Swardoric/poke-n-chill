@@ -23,8 +23,8 @@ export default function Footer() {
         </p>
         <div className="footer-payment">
           <span>💶 Espèces</span>
-          <span>💳 MasterCard</span>
-          <span>💳 VISA</span>
+          <span>💳 CB</span>
+          <span>🎫 Ticket Restaurant</span>
         </div>
       </div>
     </footer>

@@ -8,7 +8,7 @@ export const RESTAURANT = {
   phoneDisplay: '01 43 06 07 95',
   email: 'pho520balard@yahoo.com',
   mapEmbedUrl:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2626.054575201348!2d2.275560576845586!3d48.83707510220591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67075297985ff%3A0xe51d45fa8cb7e959!2sPho%20520!5e0!3m2!1sfr!2sfr!4v1784550689531!5m2!1sfr!2sfr',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d656.5267330772629!2d2.2772952696801494!3d48.83709898092616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e670752ea62ad5%3A0x2323a9cfdb60459e!2s83%20Rue%20Leblanc%2C%2075015%20Paris!5e0!3m2!1sfr!2sfr!4v1784740297305!5m2!1sfr!2sfr',
   uberEatsUrl: 'https://www.ubereats.com/',       // ← à remplacer par le vrai lien
   deliverooUrl: 'https://deliveroo.fr/',           // ← à remplacer par le vrai lien
 }

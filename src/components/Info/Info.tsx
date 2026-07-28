@@ -96,7 +96,7 @@ export default function Info() {
               </div>
               <div className="contact-details">
                 <h4>Paiement</h4>
-                <p>Espèces, MasterCard, VISA</p>
+                <p>Espèces, CB, Ticket Restaurant</p>
               </div>
             </div>
           </div>

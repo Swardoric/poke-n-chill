@@ -24,6 +24,8 @@ export default function Navbar() {
             {link.label}
           </a>
         ))}
+
+        {/*
         <a
           href={MENU_URL}
           target="_blank"
@@ -32,6 +34,7 @@ export default function Navbar() {
         >
           Voir la Carte
         </a>
+        */}
       </div>
     </nav>
   )
