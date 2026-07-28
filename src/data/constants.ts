@@ -69,9 +69,7 @@ export const HOURS: HourEntry[] = [
 export const NAV_LINKS = [
   { label: 'À propos', href: '#about' },
   { label: 'Spécialités', href: '#specialties' },
-  { label: 'La Carte', href: '#menu' },
-  { label: 'Horaires', href: '#horaires' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Infos & Contact', href: '#horaires' },
 ]
 
 /* ───── Poké Composer ───── */
