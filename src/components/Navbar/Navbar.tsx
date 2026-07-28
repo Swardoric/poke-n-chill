@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { GiNoodles } from 'react-icons/gi'
-import { MENU_URL, NAV_LINKS } from '../../data/constants'
+import { NAV_LINKS } from '../../data/constants'
 import './Navbar.css'
 
 export default function Navbar() {
@@ -24,17 +24,9 @@ export default function Navbar() {
             {link.label}
           </a>
         ))}
-
-        {/*
-        <a
-          href={MENU_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="navbar-cta"
-        >
-          Voir la Carte
+        <a href="#menu" className="navbar-cta">
+          La Carte
         </a>
-        */}
       </div>
     </nav>
   )

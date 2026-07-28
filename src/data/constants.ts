@@ -1,5 +1,3 @@
-export const MENU_URL =
-  'https://cdn.website.dish.co/media/58/85/8684167/Menu-1.pdf'
 
 export const RESTAURANT = {
   name: 'Poke n Chill',

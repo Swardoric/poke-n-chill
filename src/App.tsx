@@ -7,6 +7,7 @@ import Delivery from './components/Delivery/Delivery'
 import Info from './components/Info/Info'
 import Map from './components/Map/Map'
 import Footer from './components/Footer/Footer'
+import FloatingCta from './components/FloatingCta/FloatingCta'
 import './App.css'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Info />
       <Map />
       <Footer />
+      <FloatingCta />
     </>
   )
 }

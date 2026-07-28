@@ -1,8 +1,8 @@
 import { motion } from 'motion/react'
-import { FiCreditCard, FiPhone } from 'react-icons/fi'
+import { FiPhone } from 'react-icons/fi'
 import { HiOutlineSparkles } from 'react-icons/hi'
+import { GiNoodles } from 'react-icons/gi'
 import { fadeUp, fadeIn } from '../../utils/animations'
-import { MENU_URL } from '../../data/constants'
 import heroImg from '../../assets/hero-pho.png'
 import './Hero.css'
 
@@ -61,12 +61,10 @@ export default function Hero() {
           animate="visible"
         >
           <a
-            href={MENU_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#menu"
             className="btn btn-primary"
           >
-            <FiCreditCard /> Voir la Carte
+            <GiNoodles /> Découvrir la Carte
           </a>
           <a href="#contact" className="btn btn-outline">
             <FiPhone /> Nous Contacter
