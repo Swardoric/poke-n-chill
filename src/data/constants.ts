@@ -196,6 +196,68 @@ export const CROUSTY_TACOS: CroustyTaco[] = [
   { id: 6, name: 'Crousty Taco Surimi', protein: 'Surimi', emoji: '🦀' },
 ]
 
+/* ───── Sushi Rolls ───── */
+
+export interface SushiRoll {
+  id: number
+  name: string
+  description: string
+  price: number
+  emoji: string
+}
+
+export const SUSHI_ROLLS: SushiRoll[] = [
+  {
+    id: 1,
+    name: 'California Roll',
+    description: 'Saumon frais, avocat, concombre, agrémentés de graines de sésame.',
+    price: 7.9,
+    emoji: '🍣',
+  },
+  {
+    id: 2,
+    name: 'Salmon Roll',
+    description: 'Saumon frais, avocat mûr, concombre, cream cheese, enrobés de masago.',
+    price: 10.9,
+    emoji: '🐟',
+  },
+  {
+    id: 3,
+    name: 'Crousty Roll',
+    description: 'Saumon frais, avocat et cream cheese, accompagnés de concombre, enrobés d\'oignons frits.',
+    price: 9.9,
+    emoji: '🔥',
+  },
+  {
+    id: 4,
+    name: 'Tuna Roll',
+    description: 'Thon cuit, avocat et concombre, accompagnés de mayonnaise.',
+    price: 10.9,
+    emoji: '🐟',
+  },
+  {
+    id: 5,
+    name: 'Kazan Roll',
+    description: 'Surimi, avocat et concombre, enrobés de masago.',
+    price: 9.9,
+    emoji: '🦀',
+  },
+  {
+    id: 6,
+    name: 'Veggie Roll',
+    description: 'Avocat et concombre, enrobés de graines de sésame.',
+    price: 8.9,
+    emoji: '🌱',
+  },
+  {
+    id: 7,
+    name: 'Tempura Roll',
+    description: 'Crevette tempura et avocat, enroulés dans une feuille d\'algue nori.',
+    price: 8.9,
+    emoji: '🦐',
+  },
+]
+
 /* ───── Desserts & Boissons ───── */
 
 export type SideCategory = 'dessert' | 'boisson'

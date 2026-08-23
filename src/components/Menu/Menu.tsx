@@ -6,6 +6,7 @@ import {
   POKE_BASE_PRICE,
   CROUSTY_TACO_BASE,
   CROUSTY_TACOS,
+  SUSHI_ROLLS,
   SIDE_ITEMS,
   SIDE_CATEGORIES,
   type SideCategory,
@@ -181,6 +182,38 @@ export default function Menu() {
               <div className="taco-card-body">
                 <h3>{taco.name}</h3>
                 <p>{taco.protein}</p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+      </motion.div>
+
+      {/* Sushi Rolls */}
+      <motion.div
+        className="rolls-section"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <motion.span className="section-badge rolls-badge" variants={fadeUp} custom={0}>
+          🍣 Sushi
+        </motion.span>
+        <motion.h2 className="section-title rolls-title" variants={fadeUp} custom={1}>
+          Nos Rolls
+        </motion.h2>
+
+        <motion.div className="rolls-grid" variants={fadeUp} custom={2}>
+          {SUSHI_ROLLS.map((roll) => (
+            <div key={roll.id} className="roll-card">
+              <span className="roll-card-emoji">{roll.emoji}</span>
+              <div className="roll-card-body">
+                <div className="roll-card-header">
+                  <h3>{roll.name}</h3>
+                  <span className="roll-card-price">
+                    {roll.price.toFixed(2).replace('.', ',')} €
+                  </span>
+                </div>
+                <p>{roll.description}</p>
               </div>
             </div>
           ))}

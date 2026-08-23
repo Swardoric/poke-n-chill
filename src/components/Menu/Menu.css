@@ -231,6 +231,91 @@
   margin-top: 2px;
 }
 
+/* ===== Sushi Rolls ===== */
+.rolls-section {
+  max-width: 900px;
+  margin: 80px auto 0;
+  text-align: center;
+}
+
+.rolls-badge {
+  background: var(--green-100);
+  color: var(--green-600);
+  margin-bottom: 16px;
+}
+
+.rolls-title {
+  margin-bottom: 32px;
+}
+
+.rolls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.roll-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.roll-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--green-200);
+}
+
+.roll-card-emoji {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.roll-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.roll-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.roll-card-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.roll-card-price {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--green-500);
+  white-space: nowrap;
+}
+
+.roll-card-body p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
 /* ===== Sides (Desserts & Boissons) ===== */
 .sides-section {
   margin-top: 40px;
