@@ -144,6 +144,93 @@
   color: var(--green-600);
 }
 
+/* ===== Crousty Tacos ===== */
+.tacos-section {
+  max-width: 900px;
+  margin: 80px auto 0;
+  text-align: center;
+}
+
+.tacos-badge {
+  background: var(--pink-100);
+  color: var(--pink-600);
+  margin-bottom: 16px;
+}
+
+.tacos-title {
+  margin-bottom: 32px;
+}
+
+.tacos-base {
+  max-width: 700px;
+  margin: 0 auto 32px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.tacos-base-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.tacos-base-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.tacos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.taco-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.taco-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--pink-200);
+}
+
+.taco-card-emoji {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.taco-card-body h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: left;
+}
+
+.taco-card-body p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-align: left;
+  margin-top: 2px;
+}
+
 /* ===== Sides (Desserts & Boissons) ===== */
 .sides-section {
   margin-top: 40px;

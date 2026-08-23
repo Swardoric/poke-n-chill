@@ -167,6 +167,35 @@ export const POKE_STEPS: PokeStep[] = [
   },
 ]
 
+/* ───── Crousty Tacos ───── */
+
+export const CROUSTY_TACO_BASE = [
+  'Sauce mayonnaise',
+  'Sauce unagi',
+  'Riz vinaigré',
+  'Salade',
+  'Concombre',
+  'Carotte',
+  'Sésame noir / blanc',
+  'Masago',
+]
+
+export interface CroustyTaco {
+  id: number
+  name: string
+  protein: string
+  emoji: string
+}
+
+export const CROUSTY_TACOS: CroustyTaco[] = [
+  { id: 1, name: 'Crousty Taco', protein: 'Base uniquement', emoji: '🌮' },
+  { id: 2, name: 'Crousty Taco Unagi', protein: 'Anguille', emoji: '🐍' },
+  { id: 3, name: 'Crousty Taco Shakz', protein: 'Saumon', emoji: '🍣' },
+  { id: 4, name: 'Crousty Taco Thon Cuit', protein: 'Thon cuit', emoji: '🐟' },
+  { id: 5, name: 'Crousty Taco Tempura', protein: 'Tempura', emoji: '🦐' },
+  { id: 6, name: 'Crousty Taco Surimi', protein: 'Surimi', emoji: '🦀' },
+]
+
 /* ───── Desserts & Boissons ───── */
 
 export type SideCategory = 'dessert' | 'boisson'

@@ -4,6 +4,8 @@ import { fadeUp } from '../../utils/animations'
 import {
   POKE_STEPS,
   POKE_BASE_PRICE,
+  CROUSTY_TACO_BASE,
+  CROUSTY_TACOS,
   SIDE_ITEMS,
   SIDE_CATEGORIES,
   type SideCategory,
@@ -144,6 +146,46 @@ export default function Menu() {
 
       {/* Poké Composition */}
       <PokeComposition />
+
+      {/* Crousty Tacos */}
+      <motion.div
+        className="tacos-section"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <motion.span className="section-badge tacos-badge" variants={fadeUp} custom={0}>
+          🌮 Crousty Tacos
+        </motion.span>
+        <motion.h2 className="section-title tacos-title" variants={fadeUp} custom={1}>
+          Nos Crousty Tacos
+        </motion.h2>
+
+        {/* Base commune */}
+        <motion.div className="tacos-base" variants={fadeUp} custom={2}>
+          <h4 className="tacos-base-title">🍽️ Base commune à tous les tacos</h4>
+          <div className="tacos-base-chips">
+            {CROUSTY_TACO_BASE.map((item) => (
+              <span key={item} className="composer-chip">
+                <span className="chip-name">{item}</span>
+              </span>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Variantes */}
+        <motion.div className="tacos-grid" variants={fadeUp} custom={3}>
+          {CROUSTY_TACOS.map((taco) => (
+            <div key={taco.id} className="taco-card">
+              <span className="taco-card-emoji">{taco.emoji}</span>
+              <div className="taco-card-body">
+                <h3>{taco.name}</h3>
+                <p>{taco.protein}</p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+      </motion.div>
 
       {/* Desserts & Boissons */}
       <motion.div
