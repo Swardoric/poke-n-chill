@@ -13,21 +13,23 @@ import {
 } from '../../data/constants'
 import './Menu.css'
 
-/* ───── Poké Composition Display ───── */
+/* ───── Tab types ───── */
+type MenuTab = 'poke' | 'tacos' | 'rolls' | 'sides'
 
-function PokeComposition() {
+const TABS: { key: MenuTab; label: string; emoji: string }[] = [
+  { key: 'poke', label: 'Poké', emoji: '🥗' },
+  { key: 'tacos', label: 'Crousty Tacos', emoji: '🌮' },
+  { key: 'rolls', label: 'Rolls', emoji: '🍣' },
+  { key: 'sides', label: 'Desserts & Boissons', emoji: '🍨' },
+]
+
+/* ───── Poké Composition ───── */
+
+function PokePanel() {
   return (
     <div className="composer">
       {POKE_STEPS.map((step, idx) => (
-        <motion.div
-          key={step.id}
-          className="composer-section"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeUp}
-          custom={idx}
-        >
+        <div key={step.id} className="composer-section">
           <div className="composer-section-header">
             <span className="composer-section-num">{idx + 1}</span>
             <span className="composer-section-emoji">{step.emoji}</span>
@@ -36,7 +38,6 @@ function PokeComposition() {
               <p>{step.subtitle}</p>
             </div>
           </div>
-
           <div className="composer-options">
             {step.options.map((opt) => (
               <div key={opt.name} className="composer-chip">
@@ -48,9 +49,8 @@ function PokeComposition() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       ))}
-
       <div className="composer-price-bar">
         <span>Bowl à composer à partir de</span>
         <strong>{POKE_BASE_PRICE.toFixed(2).replace('.', ',')} €</strong>
@@ -59,9 +59,62 @@ function PokeComposition() {
   )
 }
 
-/* ───── Side items (desserts & boissons) ───── */
+/* ───── Crousty Tacos ───── */
 
-function SideMenu() {
+function TacosPanel() {
+  return (
+    <div className="tacos-panel">
+      <div className="tacos-base">
+        <h4 className="tacos-base-title">🍽️ Base commune à tous les tacos</h4>
+        <div className="tacos-base-chips">
+          {CROUSTY_TACO_BASE.map((item) => (
+            <span key={item} className="composer-chip">
+              <span className="chip-name">{item}</span>
+            </span>
+          ))}
+        </div>
+      </div>
+      <div className="tacos-grid">
+        {CROUSTY_TACOS.map((taco) => (
+          <div key={taco.id} className="taco-card">
+            <span className="taco-card-emoji">{taco.emoji}</span>
+            <div className="taco-card-body">
+              <h3>{taco.name}</h3>
+              <p>{taco.protein}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+/* ───── Sushi Rolls ───── */
+
+function RollsPanel() {
+  return (
+    <div className="rolls-grid">
+      {SUSHI_ROLLS.map((roll) => (
+        <div key={roll.id} className="roll-card">
+          <span className="roll-card-emoji">{roll.emoji}</span>
+          <div className="roll-card-body">
+            <div className="roll-card-header">
+              <h3>{roll.name}</h3>
+              <span className="roll-card-price">
+                {roll.price.toFixed(2).replace('.', ',')} €
+              </span>
+            </div>
+            <p>{roll.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+/* ───── Desserts & Boissons ───── */
+
+function SidesPanel() {
   const [filter, setFilter] = useState<SideCategory | 'all'>('all')
   const filtered =
     filter === 'all' ? SIDE_ITEMS : SIDE_ITEMS.filter((i) => i.category === filter)
@@ -72,14 +125,14 @@ function SideMenu() {
         {SIDE_CATEGORIES.map((cat) => (
           <button
             key={cat.key}
-            className={`menu-tab ${filter === cat.key ? 'active' : ''}`}
+            className={`sub-tab ${filter === cat.key ? 'active' : ''}`}
             onClick={() => setFilter(cat.key)}
           >
-            <span className="menu-tab-emoji">{cat.emoji}</span>
+            <span className="sub-tab-emoji">{cat.emoji}</span>
             {cat.label}
             {filter === cat.key && (
               <motion.div
-                className="menu-tab-indicator"
+                className="sub-tab-indicator"
                 layoutId="side-tab"
                 transition={{ type: 'spring', stiffness: 400, damping: 30 }}
               />
@@ -121,9 +174,20 @@ function SideMenu() {
   )
 }
 
-/* ───── Main Menu section ───── */
+/* ───── Panel map ───── */
+const PANELS: Record<MenuTab, () => JSX.Element> = {
+  poke: PokePanel,
+  tacos: TacosPanel,
+  rolls: RollsPanel,
+  sides: SidesPanel,
+}
+
+/* ───── Main Menu ───── */
 
 export default function Menu() {
+  const [active, setActive] = useState<MenuTab>('poke')
+  const Panel = PANELS[active]
+
   return (
     <section className="menu" id="menu">
       {/* Header */}
@@ -134,106 +198,47 @@ export default function Menu() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.span className="section-badge menu-badge" variants={fadeUp} custom={0}>
-          🥗 Compose ton Bowl
+          📋 La Carte
         </motion.span>
         <motion.h2 className="section-title" variants={fadeUp} custom={1}>
-          Crée ton poké
+          Notre menu
         </motion.h2>
-        <motion.p className="section-subtitle" variants={fadeUp} custom={2}>
-          Choisis ta base, ta protéine, tes toppings et ta sauce pour composer
-          le bowl parfait. À partir de {POKE_BASE_PRICE.toFixed(2).replace('.', ',')} €.
-        </motion.p>
       </motion.div>
 
-      {/* Poké Composition */}
-      <PokeComposition />
+      {/* Tabs */}
+      <div className="menu-tabs">
+        {TABS.map((tab) => (
+          <button
+            key={tab.key}
+            className={`menu-tab ${active === tab.key ? 'active' : ''}`}
+            onClick={() => setActive(tab.key)}
+          >
+            <span className="menu-tab-emoji">{tab.emoji}</span>
+            {tab.label}
+            {active === tab.key && (
+              <motion.div
+                className="menu-tab-indicator"
+                layoutId="menu-tab"
+                transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+              />
+            )}
+          </button>
+        ))}
+      </div>
 
-      {/* Crousty Tacos */}
-      <motion.div
-        className="tacos-section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <motion.span className="section-badge tacos-badge" variants={fadeUp} custom={0}>
-          🌮 Crousty Tacos
-        </motion.span>
-        <motion.h2 className="section-title tacos-title" variants={fadeUp} custom={1}>
-          Nos Crousty Tacos
-        </motion.h2>
-
-        {/* Base commune */}
-        <motion.div className="tacos-base" variants={fadeUp} custom={2}>
-          <h4 className="tacos-base-title">🍽️ Base commune à tous les tacos</h4>
-          <div className="tacos-base-chips">
-            {CROUSTY_TACO_BASE.map((item) => (
-              <span key={item} className="composer-chip">
-                <span className="chip-name">{item}</span>
-              </span>
-            ))}
-          </div>
+      {/* Panel content */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={active}
+          className="menu-panel"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -16 }}
+          transition={{ duration: 0.25 }}
+        >
+          <Panel />
         </motion.div>
-
-        {/* Variantes */}
-        <motion.div className="tacos-grid" variants={fadeUp} custom={3}>
-          {CROUSTY_TACOS.map((taco) => (
-            <div key={taco.id} className="taco-card">
-              <span className="taco-card-emoji">{taco.emoji}</span>
-              <div className="taco-card-body">
-                <h3>{taco.name}</h3>
-                <p>{taco.protein}</p>
-              </div>
-            </div>
-          ))}
-        </motion.div>
-      </motion.div>
-
-      {/* Sushi Rolls */}
-      <motion.div
-        className="rolls-section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <motion.span className="section-badge rolls-badge" variants={fadeUp} custom={0}>
-          🍣 Sushi
-        </motion.span>
-        <motion.h2 className="section-title rolls-title" variants={fadeUp} custom={1}>
-          Nos Rolls
-        </motion.h2>
-
-        <motion.div className="rolls-grid" variants={fadeUp} custom={2}>
-          {SUSHI_ROLLS.map((roll) => (
-            <div key={roll.id} className="roll-card">
-              <span className="roll-card-emoji">{roll.emoji}</span>
-              <div className="roll-card-body">
-                <div className="roll-card-header">
-                  <h3>{roll.name}</h3>
-                  <span className="roll-card-price">
-                    {roll.price.toFixed(2).replace('.', ',')} €
-                  </span>
-                </div>
-                <p>{roll.description}</p>
-              </div>
-            </div>
-          ))}
-        </motion.div>
-      </motion.div>
-
-      {/* Desserts & Boissons */}
-      <motion.div
-        className="sides-section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <motion.h2 className="section-title sides-title" variants={fadeUp} custom={0}>
-          Desserts &amp; Boissons
-        </motion.h2>
-        <motion.div variants={fadeUp} custom={1}>
-          <SideMenu />
-        </motion.div>
-      </motion.div>
+      </AnimatePresence>
     </section>
   )
 }
