@@ -256,6 +256,13 @@ export const SUSHI_ROLLS: SushiRoll[] = [
     price: 8.9,
     emoji: '🦐',
   },
+  {
+    id: 8,
+    name: 'Lok Lak Roll',
+    description: 'Riz rouge et bœuf lok lak.',
+    price: 10.9,
+    emoji: '🥩',
+  },
 ]
 
 /* ───── Desserts & Boissons ───── */
