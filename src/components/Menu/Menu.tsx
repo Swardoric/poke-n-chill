@@ -7,6 +7,11 @@ import {
   CROUSTY_TACO_BASE,
   CROUSTY_TACOS,
   SUSHI_ROLLS,
+  BUBBLE_TEA_PRICE,
+  BUBBLE_TEA_FRUITY,
+  BUBBLE_TEA_MILK,
+  BUBBLE_TEA_TOPPINGS,
+  BUBBLE_TEA_TOPPING_EXTRA,
   SIDE_ITEMS,
   SIDE_CATEGORIES,
   type SideCategory,
@@ -14,12 +19,13 @@ import {
 import './Menu.css'
 
 /* ───── Tab types ───── */
-type MenuTab = 'poke' | 'tacos' | 'rolls' | 'sides'
+type MenuTab = 'poke' | 'tacos' | 'rolls' | 'bubble' | 'sides'
 
 const TABS: { key: MenuTab; label: string; emoji: string }[] = [
   { key: 'poke', label: 'Poké', emoji: '🥗' },
   { key: 'tacos', label: 'Crousty Tacos', emoji: '🌮' },
   { key: 'rolls', label: 'Rolls', emoji: '🍣' },
+  { key: 'bubble', label: 'Bubble Tea', emoji: '🧋' },
   { key: 'sides', label: 'Desserts & Boissons', emoji: '🍨' },
 ]
 
@@ -174,11 +180,81 @@ function SidesPanel() {
   )
 }
 
+/* ───── Bubble Tea ───── */
+
+function BubbleTeaPanel() {
+  return (
+    <div className="bubble-panel">
+      <div className="bubble-price-banner">
+        <div className="bubble-banner-left">
+          <span className="bubble-banner-icon">🧋</span>
+          <div>
+            <h3 className="bubble-banner-title">Bubble Tea</h3>
+            <p className="bubble-banner-sub">Thé fruité ou thé au lait, à personnaliser</p>
+          </div>
+        </div>
+        <div className="bubble-banner-right">
+          <span className="bubble-banner-vol">50cl</span>
+          <strong className="bubble-price-value">
+            {BUBBLE_TEA_PRICE.toFixed(2).replace('.', ',')} €
+          </strong>
+        </div>
+      </div>
+
+      <div className="bubble-columns">
+        {/* Thé Fruité */}
+        <div className="bubble-column">
+          <h3 className="bubble-column-title">🍓 Thé fruité</h3>
+          <p className="bubble-column-note">1 topping au choix inclus</p>
+          <div className="bubble-flavors">
+            {BUBBLE_TEA_FRUITY.map((f) => (
+              <span key={f} className="composer-chip">
+                <span className="chip-name">{f}</span>
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Thé au lait */}
+        <div className="bubble-column">
+          <h3 className="bubble-column-title">🥛 Thé au lait</h3>
+          {BUBBLE_TEA_MILK.map((m) => (
+            <div key={m.name} className="bubble-milk-item">
+              <span className="composer-chip">
+                <span className="chip-name">{m.name}</span>
+              </span>
+              <p className="bubble-milk-note">{m.note}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Toppings */}
+      <div className="bubble-toppings">
+        <h4 className="bubble-toppings-title">
+          Toppings au choix
+          <span className="bubble-toppings-extra">
+            extra +{BUBBLE_TEA_TOPPING_EXTRA.toFixed(2).replace('.', ',')} €
+          </span>
+        </h4>
+        <div className="bubble-toppings-list">
+          {BUBBLE_TEA_TOPPINGS.map((t) => (
+            <span key={t} className="composer-chip">
+              <span className="chip-name">{t}</span>
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 /* ───── Panel map ───── */
 const PANELS: Record<MenuTab, () => JSX.Element> = {
   poke: PokePanel,
   tacos: TacosPanel,
   rolls: RollsPanel,
+  bubble: BubbleTeaPanel,
   sides: SidesPanel,
 }
 

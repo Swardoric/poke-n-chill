@@ -328,6 +328,155 @@
   line-height: 1.55;
 }
 
+/* ===== Bubble Tea ===== */
+.bubble-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.bubble-price-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 32px;
+  background: linear-gradient(135deg, var(--pink-50) 0%, var(--pink-100) 50%, var(--green-50) 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--pink-200);
+}
+
+.bubble-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bubble-banner-icon {
+  font-size: 3rem;
+}
+
+.bubble-banner-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.bubble-banner-sub {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.bubble-banner-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bubble-banner-vol {
+  padding: 6px 14px;
+  border-radius: 50px;
+  background: var(--white);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  border: 1px solid var(--cream-dark);
+}
+
+.bubble-price-value {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--pink-600);
+}
+
+.bubble-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.bubble-column {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.bubble-column-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.bubble-column-note {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.bubble-flavors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bubble-milk-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.bubble-milk-note {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.bubble-toppings {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.bubble-toppings-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bubble-toppings-extra {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--pink-500);
+  background: var(--pink-50);
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.bubble-toppings-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 640px) {
+  .bubble-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== Desserts & Boissons ===== */
 .sides-tabs {
   display: flex;
@@ -529,5 +678,21 @@
     width: 48px;
     height: 48px;
     font-size: 1.5rem;
+  }
+
+  .bubble-price-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+    padding: 24px 20px;
+  }
+
+  .bubble-banner-left {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .bubble-columns {
+    grid-template-columns: 1fr;
   }
 }

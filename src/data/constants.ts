@@ -264,6 +264,24 @@ export const SUSHI_ROLLS: SushiRoll[] = [
   },
 ]
 
+/* ───── Bubble Tea ───── */
+
+export const BUBBLE_TEA_PRICE = 5.8  // prix unique
+
+export const BUBBLE_TEA_FRUITY = [
+  'Fraise', 'Lychee', 'Mangue', 'Melon', 'Passion', 'Pêche',
+]
+
+export const BUBBLE_TEA_MILK = [
+  { name: 'Brown Sugar', note: 'Perles de tapioca incluses' },
+]
+
+export const BUBBLE_TEA_TOPPINGS = [
+  'Fraise', 'Lychee', 'Mangue', 'Melon', 'Pêche',
+]
+
+export const BUBBLE_TEA_TOPPING_EXTRA = 0.5  // +0,50 € par topping supplémentaire
+
 /* ───── Desserts & Boissons ───── */
 
 export type SideCategory = 'dessert' | 'boisson'
@@ -323,15 +341,6 @@ export const SIDE_ITEMS: SideItem[] = [
   /* ── Boissons ── */
   {
     id: 5,
-    name: 'Bubble Tea Taro',
-    description: 'Thé au taro crémeux avec perles de tapioca.',
-    price: 5.5,
-    emoji: '🧋',
-    category: 'boisson',
-    popular: true,
-  },
-  {
-    id: 6,
     name: 'Limonade Yuzu',
     description: 'Limonade fraîche au yuzu et menthe, légèrement pétillante.',
     price: 4.5,
@@ -339,7 +348,7 @@ export const SIDE_ITEMS: SideItem[] = [
     category: 'boisson',
   },
   {
-    id: 7,
+    id: 6,
     name: 'Thé Glacé Jasmin',
     description: 'Thé au jasmin infusé à froid, notes florales.',
     price: 3.9,
@@ -347,7 +356,7 @@ export const SIDE_ITEMS: SideItem[] = [
     category: 'boisson',
   },
   {
-    id: 8,
+    id: 7,
     name: 'Smoothie Mangue-Passion',
     description: 'Smoothie onctueux mangue et fruit de la passion.',
     price: 5.9,
@@ -355,7 +364,7 @@ export const SIDE_ITEMS: SideItem[] = [
     category: 'boisson',
   },
   {
-    id: 9,
+    id: 8,
     name: 'Eau Minérale / Pétillante',
     description: 'Bouteille 50cl.',
     price: 2.5,
