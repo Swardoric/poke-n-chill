@@ -67,8 +67,8 @@ export const HOURS: HourEntry[] = [
 ]
 
 export const NAV_LINKS = [
-  { label: 'À propos', href: '#about' },
-  { label: 'Infos & Contact', href: '#horaires' },
+  { label: 'À propos', href: '/' },
+  { label: 'Infos & Contact', href: '/infos' },
 ]
 
 /* ───── Poké Composer ───── */

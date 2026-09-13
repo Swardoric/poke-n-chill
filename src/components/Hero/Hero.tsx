@@ -1,4 +1,5 @@
 import { motion } from 'motion/react'
+import { Link } from 'react-router'
 import { FiPhone } from 'react-icons/fi'
 import { HiOutlineSparkles } from 'react-icons/hi'
 import { GiNoodles } from 'react-icons/gi'
@@ -60,15 +61,12 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          <a
-            href="#menu"
-            className="btn btn-primary"
-          >
+          <Link to="/carte" className="btn btn-primary">
             <GiNoodles /> Découvrir la Carte
-          </a>
-          <a href="#contact" className="btn btn-outline">
+          </Link>
+          <Link to="/infos" className="btn btn-outline">
             <FiPhone /> Nous Contacter
-          </a>
+          </Link>
         </motion.div>
       </motion.div>
 
