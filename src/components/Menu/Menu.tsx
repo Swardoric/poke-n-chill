@@ -3,7 +3,8 @@ import { motion, AnimatePresence, LayoutGroup } from 'motion/react'
 import { fadeUp } from '../../utils/animations'
 import {
   POKE_STEPS,
-  POKE_BASE_PRICE,
+  POKE_SIZES,
+  POKE_EXTRAS,
   CROUSTY_TACO_BASE,
   CROUSTY_TACOS,
   SUSHI_ROLLS,
@@ -32,8 +33,42 @@ const TABS: { key: MenuTab; label: string; emoji: string }[] = [
 /* ───── Poké Composition ───── */
 
 function PokePanel() {
+  const fmt = (n: number) => n.toFixed(2).replace('.', ',')
+
   return (
     <div className="composer">
+      {/* Sizes */}
+      <div className="poke-sizes">
+        {POKE_SIZES.map((size) => (
+          <div key={size.label} className="poke-size-card">
+            <div className="poke-size-header">
+              <span className="poke-size-label">{size.label}</span>
+              <strong className="poke-size-price">{fmt(size.price)} €</strong>
+            </div>
+            <ul className="poke-size-details">
+              <li>🍚 {size.base} base</li>
+              <li>🐟 {size.proteins} protéine{size.proteins > 1 ? 's' : ''}</li>
+              <li>🥬 {size.legumes} légumes</li>
+              <li>🫙 {size.sauces} sauce{size.sauces > 1 ? 's' : ''}</li>
+            </ul>
+            <div className="poke-size-formula">
+              <span>🥤 Formule + boisson 33cl</span>
+              <strong>{fmt(size.formulaPrice)} €</strong>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Extras */}
+      <div className="poke-extras">
+        {POKE_EXTRAS.map((extra) => (
+          <span key={extra.name} className="poke-extra-chip">
+            {extra.name} <strong>+{fmt(extra.price)} €</strong>
+          </span>
+        ))}
+      </div>
+
+      {/* Composition steps */}
       {POKE_STEPS.map((step, idx) => (
         <div key={step.id} className="composer-section">
           <div className="composer-section-header">
@@ -50,17 +85,13 @@ function PokePanel() {
                 <span className="chip-emoji">{opt.emoji}</span>
                 <span className="chip-name">{opt.name}</span>
                 {opt.extra && (
-                  <span className="chip-extra">+{opt.extra.toFixed(2).replace('.', ',')} €</span>
+                  <span className="chip-extra">+{fmt(opt.extra)} €</span>
                 )}
               </div>
             ))}
           </div>
         </div>
       ))}
-      <div className="composer-price-bar">
-        <span>Bowl à composer à partir de</span>
-        <strong>{POKE_BASE_PRICE.toFixed(2).replace('.', ',')} €</strong>
-      </div>
     </div>
   )
 }

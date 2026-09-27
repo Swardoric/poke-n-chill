@@ -76,7 +76,7 @@ export const NAV_LINKS = [
 export interface PokeOption {
   name: string
   emoji: string
-  extra?: number          // surcoût éventuel (en €)
+  extra?: number
 }
 
 export interface PokeStep {
@@ -84,11 +84,30 @@ export interface PokeStep {
   title: string
   subtitle: string
   emoji: string
-  pick: 'one' | 'many'   // sélection unique ou multiple
+  pick: 'one' | 'many'
   options: PokeOption[]
 }
 
-export const POKE_BASE_PRICE = 12.9   // prix de départ du bowl
+export interface PokeBowlSize {
+  label: string
+  price: number
+  base: number
+  proteins: number
+  legumes: number
+  sauces: number
+  formulaPrice: number   // PokeBowl + Boisson 33cl
+}
+
+export const POKE_SIZES: PokeBowlSize[] = [
+  { label: 'M', price: 11.9, base: 1, proteins: 1, legumes: 4, sauces: 1, formulaPrice: 12.9 },
+  { label: 'L', price: 14.9, base: 1, proteins: 2, legumes: 5, sauces: 2, formulaPrice: 15.9 },
+]
+
+export const POKE_EXTRAS = [
+  { name: 'Extra légume', price: 1 },
+  { name: 'Extra protéine', price: 2 },
+  { name: 'Extra sauce', price: 0.5 },
+]
 
 export const POKE_STEPS: PokeStep[] = [
   {
