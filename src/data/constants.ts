@@ -4,10 +4,10 @@ export const RESTAURANT = {
   address: '83 Rue Leblanc, 75015 Paris',
   phone: '+33143060795',
   phoneDisplay: '01 43 06 07 95',
-  email: 'pho520balard@yahoo.com',
+  email: 'pokenchillbalard@yahoo.com',
   mapEmbedUrl:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d656.5267330772629!2d2.2772952696801494!3d48.83709898092616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e670752ea62ad5%3A0x2323a9cfdb60459e!2s83%20Rue%20Leblanc%2C%2075015%20Paris!5e0!3m2!1sfr!2sfr!4v1784740297305!5m2!1sfr!2sfr',
-  uberEatsUrl: 'https://www.ubereats.com/',       // ← à remplacer par le vrai lien
+  uberEatsUrl: 'https://www.ubereats.com/fr/store/poke-n-chill/IhPtizZ2S82O_M0uRzw-Eg?diningMode=DELIVERY&surfaceName=',       // ← à remplacer par le vrai lien
   deliverooUrl: 'https://deliveroo.fr/',           // ← à remplacer par le vrai lien
 }
 
@@ -19,34 +19,34 @@ export interface Specialty {
 
 export const SPECIALTIES: Specialty[] = [
   {
-    emoji: '🍜',
-    title: 'Phở traditionnel',
-    desc: 'Bouillon mijoté pendant des heures, nouilles de riz et herbes fraîches.',
+    emoji: '🥗',
+    title: 'Poke Bowl',
+    desc: 'Une base savoureuse et des ingrédients frais pour créer le bowl qui vous ressemble!',
   },
   {
-    emoji: '🥖',
-    title: 'Bánh Mì',
-    desc: 'Sandwich croustillant garni de viandes, pickles et coriandre.',
+    emoji: '🍣',
+    title: 'Sushi Roll',
+    desc: 'Des rouleaux généreux et frais, une nouvelle manière de savourer vos sushis!',
   },
   {
-    emoji: '🥢',
-    title: 'Bò Bún',
-    desc: 'Vermicelles, bœuf grillé, nems et sauce nuoc-mam.',
+    emoji: '🌮',
+    title: 'Crousty Taco',
+    desc: 'Un taco garni de nombreux toppings, enveloppé dune feuille dalgue nori qui en fera craquer plus dun!',
   },
   {
-    emoji: '🫕',
-    title: 'Soupe thaï',
-    desc: 'Saveurs thaïlandaises épicées et parfumées au lait de coco.',
+    emoji: '🍙',
+    title: 'Onigiri',
+    desc: 'Du riz japonais délicatement façonné, fourré de savoureuse garnitures!',
   },
   {
     emoji: '🥬',
-    title: 'Plats végétariens',
-    desc: 'Une sélection de plats sains et savoureux à base de légumes.',
+    title: 'Inari',
+    desc: 'De petites poches de tofu frit garnie de riz vinaigrés accompagnés de ses toppings.',
   },
   {
-    emoji: '🍨',
-    title: 'Desserts',
-    desc: 'Crème glacée, fruits frais et douceurs vietnamiennes.',
+    emoji: '🧋',
+    title: 'Bubble Tea',
+    desc: 'Une boisson fraîche et gourmande avec un thé parfumé pour parfaire pour compléter vos plats.',
   },
 ]
 
@@ -57,12 +57,12 @@ export interface HourEntry {
 }
 
 export const HOURS: HourEntry[] = [
-  { day: 'Lundi', time: '11h45 – 14h30 / 18h45 – 22h15' },
-  { day: 'Mardi', time: '11h45 – 14h30 / 18h45 – 22h15' },
-  { day: 'Mercredi', time: '11h45 – 14h30 / 18h45 – 22h15' },
-  { day: 'Jeudi', time: '11h45 – 14h30 / 18h45 – 22h15' },
-  { day: 'Vendredi', time: '11h45 – 14h30 / 18h45 – 22h15' },
-  { day: 'Samedi', time: '11h45 – 14h15 / 18h45 – 22h15' },
+  { day: 'Lundi', time: '11h30 - 21h30' },
+  { day: 'Mardi', time: '11h30 - 21h30' },
+  { day: 'Mercredi', time: '11h30 - 21h30' },
+  { day: 'Jeudi', time: '11h30 - 21h30' },
+  { day: 'Vendredi', time: '11h30 - 21h30' },
+  { day: 'Samedi', time: '11h30 - 21h30' },
   { day: 'Dimanche', time: 'Fermé', closed: true },
 ]
 
@@ -117,9 +117,9 @@ export const POKE_STEPS: PokeStep[] = [
     emoji: '🍚',
     pick: 'one',
     options: [
-      { name: 'Riz vinaigré', emoji: '🍚' },
-      { name: 'Riz blanc', emoji: '🍙' },
-      { name: 'Riz rouge', emoji: '🌾' },
+      { name: 'Riz noir (complet)', emoji: '🍚' },
+      { name: 'Riz blanc', emoji: '🍚' },
+      { name: 'Salade', emoji: '🥬' },
     ],
   },
   {
@@ -130,15 +130,15 @@ export const POKE_STEPS: PokeStep[] = [
     pick: 'one',
     options: [
       { name: 'Saumon', emoji: '🍣' },
-      { name: 'Thon', emoji: '🐟' },
-      { name: 'Poulet', emoji: '🍗' },
+      { name: 'Poulet citronnelle', emoji: '🍗' },
       { name: 'Crevettes', emoji: '🦐' },
+      { name: 'Gyoza (4 pièces)', emoji: '🥟' },
     ],
   },
   {
     id: 'legumes',
     title: 'Tes légumes',
-    subtitle: 'Choisis tes légumes',
+    subtitle: 'Choisis tes légumes (La disponnibilité de chaques légumes peuvent varier)',
     emoji: '🥬',
     pick: 'many',
     options: [
@@ -147,15 +147,24 @@ export const POKE_STEPS: PokeStep[] = [
       { name: 'Tofu', emoji: '🧈' },
       { name: 'Avocat', emoji: '🥑' },
       { name: 'Maïs', emoji: '🌽' },
-      { name: 'Tomate', emoji: '🍅' },
-      { name: 'Chou blanc mariné', emoji: '🥬' },
+      { name: 'Tomate-cerise', emoji: '🍅' },
+      { name: 'Chou blanc', emoji: '🥬' },
+      { name: 'Chou rouge', emoji: '🥬' },
       { name: 'Radis marinées (daïkon)', emoji: '🔴' },
       { name: 'Concombre', emoji: '🥒' },
-      { name: 'Algue', emoji: '🌊' },
-      { name: 'Wakamé', emoji: '🌿' },
-      { name: 'Betteraves rouges', emoji: '🟣' },
-      { name: 'Lentilles', emoji: '🫛' },
-      { name: 'Corail', emoji: '🪸' },
+      { name: 'Algue Wakame', emoji: '🌊' },
+      { name: 'Brocolis', emoji: '🥦' },
+      { name: 'Betteraves', emoji: '🟣' },
+      { name: 'Lentilles', emoji: '🫘' },
+      { name: 'Mozarella', emoji: '🪸' },
+      { name: 'Mangue', emoji: '🥭' },
+      { name: 'Edamame', emoji: '🫛' },
+      { name: 'Oignons rouge', emoji: '🧅' },
+      { name: 'Ananas', emoji: '🍍' },
+      { name: 'Artichauts', emoji: '🥬' },
+      { name: 'Champignon', emoji: '🍄‍🟫' },
+      { name: 'Gingembre', emoji: '🫚' },
+      { name: 'Olive', emoji: '🫒' },
     ],
   },
   {
@@ -168,7 +177,6 @@ export const POKE_STEPS: PokeStep[] = [
       { name: 'Sésame blanc / noir', emoji: '⚪' },
       { name: 'Oignons frits', emoji: '🧅' },
       { name: 'Cacahuètes', emoji: '🥜' },
-      { name: 'Mangue', emoji: '🥭' },
     ],
   },
   {
@@ -181,6 +189,7 @@ export const POKE_STEPS: PokeStep[] = [
       { name: 'Soja sucrée', emoji: '🍯' },
       { name: 'Soja salée', emoji: '🫘' },
       { name: 'Sésame', emoji: '🥜' },
+      { name: 'Wasabi', emoji: '🟢' },
     ],
   },
 ]
@@ -206,7 +215,7 @@ export interface CroustyTaco {
 }
 
 export const CROUSTY_TACOS: CroustyTaco[] = [
-  { id: 1, name: 'Crousty Taco', protein: 'Base uniquement', emoji: '🌮' },
+  { id: 1, name: 'Crousty Taco Poulet', protein: 'Poulet citronnelle', emoji: '🌮' },
   { id: 2, name: 'Crousty Taco Unagi', protein: 'Anguille', emoji: '🐍' },
   { id: 3, name: 'Crousty Taco Shakz', protein: 'Saumon', emoji: '🍣' },
   { id: 4, name: 'Crousty Taco Thon Cuit', protein: 'Thon cuit', emoji: '🐟' },
@@ -229,7 +238,7 @@ export const SUSHI_ROLLS: SushiRoll[] = [
     id: 1,
     name: 'California Roll',
     description: 'Saumon frais, avocat, concombre, agrémentés de graines de sésame.',
-    price: 7.9,
+    price: 10.9,
     emoji: '🍣',
   },
   {
@@ -243,7 +252,7 @@ export const SUSHI_ROLLS: SushiRoll[] = [
     id: 3,
     name: 'Crousty Roll',
     description: 'Saumon frais, avocat et cream cheese, accompagnés de concombre, enrobés d\'oignons frits.',
-    price: 9.9,
+    price: 10.9,
     emoji: '🔥',
   },
   {
@@ -257,21 +266,21 @@ export const SUSHI_ROLLS: SushiRoll[] = [
     id: 5,
     name: 'Kazan Roll',
     description: 'Surimi, avocat et concombre, enrobés de masago.',
-    price: 9.9,
+    price: 10.9,
     emoji: '🦀',
   },
   {
     id: 6,
     name: 'Veggie Roll',
     description: 'Avocat et concombre, enrobés de graines de sésame.',
-    price: 8.9,
+    price: 10.9,
     emoji: '🌱',
   },
   {
     id: 7,
     name: 'Tempura Roll',
     description: 'Crevette tempura et avocat, enroulés dans une feuille d\'algue nori.',
-    price: 8.9,
+    price: 10.9,
     emoji: '🦐',
   },
   {
@@ -288,7 +297,7 @@ export const SUSHI_ROLLS: SushiRoll[] = [
 export const BUBBLE_TEA_PRICE = 5.8  // prix unique
 
 export const BUBBLE_TEA_FRUITY = [
-  'Fraise', 'Lychee', 'Mangue', 'Melon', 'Passion', 'Pêche',
+  'Fraise', 'Lychee', 'Mangue', 'Myrtille', 'Passion', 'Pêche',
 ]
 
 export const BUBBLE_TEA_MILK = [
@@ -296,7 +305,7 @@ export const BUBBLE_TEA_MILK = [
 ]
 
 export const BUBBLE_TEA_TOPPINGS = [
-  'Fraise', 'Lychee', 'Mangue', 'Melon', 'Pêche',
+  'Fraise', 'Lychee', 'Mangue', 'Myrtille', 'Pêche','passion',
 ]
 
 export const BUBBLE_TEA_TOPPING_EXTRA = 0.5  // +0,50 € par topping supplémentaire
@@ -325,69 +334,39 @@ export const SIDE_ITEMS: SideItem[] = [
   /* ── Desserts ── */
   {
     id: 1,
-    name: 'Mochi Glacé (x3)',
-    description: 'Assortiment de mochis : mangue, matcha, fraise.',
-    price: 5.5,
+    name: 'Mochi',
+    description: 'Thé vert/myrtille/yuzu/cerise/sakura/chocolat/ sésame/mangue.',
+    price: 3,
     emoji: '🍡',
     category: 'dessert',
-    popular: true,
+    popular: false,
   },
   {
     id: 2,
-    name: 'Perles de Coco',
-    description: 'Perles de tapioca au lait de coco, mangue fraîche et menthe.',
-    price: 5.9,
+    name: 'Tiramisu',
+    description: 'Cookies & cream / chocolat & caramel / fraise.',
+    price: 3,
     emoji: '🥥',
     category: 'dessert',
   },
   {
     id: 3,
-    name: 'Cheesecake Yuzu',
-    description: 'Cheesecake léger parfumé au yuzu, biscuit spéculoos.',
-    price: 6.5,
-    emoji: '🍰',
+    name: 'Mousse au chocolat',
+    description: '',
+    price: 3,
+    emoji: '🍫',
     category: 'dessert',
   },
   {
     id: 4,
-    name: 'Tiramisu Matcha',
-    description: 'Tiramisu revisité au thé matcha et mascarpone onctueux.',
+    name: 'Gateaux coeur coulant au chocolat',
+    description: '',
     price: 6.9,
-    emoji: '🍵',
+    emoji: '🍫',
     category: 'dessert',
   },
 
   /* ── Boissons ── */
-  {
-    id: 5,
-    name: 'Limonade Yuzu',
-    description: 'Limonade fraîche au yuzu et menthe, légèrement pétillante.',
-    price: 4.5,
-    emoji: '🍋',
-    category: 'boisson',
-  },
-  {
-    id: 6,
-    name: 'Thé Glacé Jasmin',
-    description: 'Thé au jasmin infusé à froid, notes florales.',
-    price: 3.9,
-    emoji: '🌸',
-    category: 'boisson',
-  },
-  {
-    id: 7,
-    name: 'Smoothie Mangue-Passion',
-    description: 'Smoothie onctueux mangue et fruit de la passion.',
-    price: 5.9,
-    emoji: '🥭',
-    category: 'boisson',
-  },
-  {
-    id: 8,
-    name: 'Eau Minérale / Pétillante',
-    description: 'Bouteille 50cl.',
-    price: 2.5,
-    emoji: '💧',
-    category: 'boisson',
-  }
+  
+ 
 ]
