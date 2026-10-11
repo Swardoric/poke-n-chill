@@ -212,15 +212,16 @@ export interface CroustyTaco {
   name: string
   protein: string
   emoji: string
+  price: number
 }
 
 export const CROUSTY_TACOS: CroustyTaco[] = [
-  { id: 1, name: 'Crousty Taco Poulet', protein: 'Poulet citronnelle', emoji: '🌮' },
-  { id: 2, name: 'Crousty Taco Unagi', protein: 'Anguille', emoji: '🐍' },
-  { id: 3, name: 'Crousty Taco Shakz', protein: 'Saumon', emoji: '🍣' },
-  { id: 4, name: 'Crousty Taco Thon Cuit', protein: 'Thon cuit', emoji: '🐟' },
-  { id: 5, name: 'Crousty Taco Tempura', protein: 'Tempura', emoji: '🦐' },
-  { id: 6, name: 'Crousty Taco Surimi', protein: 'Surimi', emoji: '🦀' },
+  { id: 1, name: 'Crousty Taco Poulet', protein: 'Poulet citronnelle', emoji: '🌮', price: 6.90 },
+  { id: 2, name: 'Crousty Taco Unagi', protein: 'Anguille', emoji: '🐍', price: 6.90 },
+  { id: 3, name: 'Crousty Taco Shakz', protein: 'Saumon', emoji: '🍣', price: 6.90 },
+  { id: 4, name: 'Crousty Taco Thon Cuit', protein: 'Thon cuit', emoji: '🐟', price: 6.90 },
+  { id: 5, name: 'Crousty Taco Tempura', protein: 'Tempura', emoji: '🦐', price: 6.90 },
+  { id: 6, name: 'Crousty Taco Surimi', protein: 'Surimi', emoji: '🦀', price: 6.90 },
 ]
 
 /* ───── Sushi Rolls ───── */

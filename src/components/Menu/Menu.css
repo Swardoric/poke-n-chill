@@ -356,11 +356,32 @@
   flex-shrink: 0;
 }
 
+.taco-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.taco-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
 .taco-card-body h3 {
   font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 700;
   color: var(--text-primary);
+}
+
+.taco-card-price {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--green-500);
+  white-space: nowrap;
 }
 
 .taco-card-body p {
