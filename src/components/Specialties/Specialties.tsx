@@ -19,7 +19,7 @@ export default function Specialties() {
           Des saveurs qui voyagent
         </motion.h2>
         <motion.p className="section-subtitle" variants={fadeUp} custom={2}>
-          Découvrez notre sélection de plats vietnamiens et thaïlandais,
+          Découvrez notre sélection de plats japonais et hawaïen,
           préparés avec passion et des ingrédients de qualité.
         </motion.p>
       </motion.div>
