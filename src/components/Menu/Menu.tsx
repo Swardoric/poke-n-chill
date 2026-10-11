@@ -116,7 +116,10 @@ function TacosPanel() {
           <div key={taco.id} className="taco-card">
             <span className="taco-card-emoji">{taco.emoji}</span>
             <div className="taco-card-body">
-              <h3>{taco.name}</h3>
+              <div className="taco-card-header">
+                <h3>{taco.name}</h3>
+                <span className="taco-card-price">{taco.price.toFixed(2).replace('.', ',')}€</span>
+              </div>
               <p>{taco.protein}</p>
             </div>
           </div>
