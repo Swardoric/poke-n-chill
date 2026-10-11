@@ -6,6 +6,7 @@ import {
   POKE_SIZES,
   POKE_EXTRAS,
   CROUSTY_TACO_BASE,
+  CROUSTY_TACO_BASE_IMAGE,
   CROUSTY_TACOS,
   SUSHI_ROLLS,
   BUBBLE_TEA_PRICE,
@@ -102,6 +103,11 @@ function PokePanel() {
 function TacosPanel() {
   return (
     <div className="tacos-panel">
+      {CROUSTY_TACO_BASE_IMAGE && (
+        <div className="tacos-base-image">
+          <img src={CROUSTY_TACO_BASE_IMAGE} alt="Crousty Taco base" />
+        </div>
+      )}
       <div className="tacos-base">
         <h4 className="tacos-base-title">🍽️ Base commune à tous les tacos</h4>
         <div className="tacos-base-chips">

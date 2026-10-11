@@ -304,6 +304,18 @@
   gap: 32px;
 }
 
+.tacos-base-image {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.tacos-base-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .tacos-base {
   background: var(--white);
   border-radius: var(--radius-md);

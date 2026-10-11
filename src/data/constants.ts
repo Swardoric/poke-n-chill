@@ -197,6 +197,8 @@ export const POKE_STEPS: PokeStep[] = [
 
 /* ───── Crousty Tacos ───── */
 
+export const CROUSTY_TACO_BASE_IMAGE = ''
+
 export const CROUSTY_TACO_BASE = [
   'Sauce mayonnaise',
   'Sauce unagi',
