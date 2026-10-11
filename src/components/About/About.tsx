@@ -35,10 +35,10 @@ export default function About() {
             Une cuisine qui<br />vous enchante
           </motion.h2>
           <motion.p className="about-description" variants={fadeUp} custom={2}>
-            La cuisine vietnamienne vous enchantera avec son exclusive variété
-            de délices culinaires. Laissez-vous tenter par notre délicieuse
-            cuisine et une sélection de boissons rafraîchissantes. Les
-            excellentes soupes feront plaisir à tout le monde.
+            La cuisine hawaiienne et japonaise vous mènera vers un voyage gourmand 
+            grâce à une variété de délices frais et colorés. Laissez-vous tenter par 
+            nos savoureux poke bowls, nos délicieux inari et nos onigiri faits 
+            maison, accompagnés d'une sélection de bubble teas rafraîchissants.
           </motion.p>
           <motion.p className="about-description" variants={fadeUp} custom={3}>
             Nous proposons aussi des plats végétariens — donc tout le monde
@@ -56,7 +56,7 @@ export default function About() {
             </div>
             <div className="about-feature">
               <span className="feature-icon">🔥</span>
-              <span>Cuisine traditionnelle</span>
+              <span>Cuisine traditionnelle & moderne</span>
             </div>
             <div className="about-feature">
               <span className="feature-icon">💚</span>

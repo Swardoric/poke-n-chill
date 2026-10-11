@@ -19,7 +19,7 @@ export default function Delivery() {
             On vous livre<br />chez vous !
           </h2>
           <p className="delivery-desc">
-            Retrouvez nos pokés bowls, desserts et boissons sur vos plateformes
+            Retrouvez nos pokés bowls, crousty taco, onigiri, inari, desserts et boissons sur vos plateformes
             de livraison préférées.
           </p>
         </motion.div>

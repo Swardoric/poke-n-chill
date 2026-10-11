@@ -28,7 +28,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          <HiOutlineSparkles /> Restaurant Vietnamien • Paris 15e
+          <HiOutlineSparkles /> Restaurant - Traiteur • Paris 15e
         </motion.span>
 
         <motion.h1
@@ -39,7 +39,7 @@ export default function Hero() {
           animate="visible"
         >
           Poke n Chill
-          <span>Cuisine Vietnamienne Authentique</span>
+          <span>Cuisine japonaise/hawaïenne</span>
         </motion.h1>
 
         <motion.p
@@ -50,7 +50,7 @@ export default function Hero() {
           animate="visible"
         >
           Envie d'un délicieux repas ? Laissez-vous tenter par notre cuisine
-          vietnamienne et thaïlandaise, préparée avec des ingrédients frais et
+          japonaise et Hawaïennes, préparée avec des ingrédients frais et
           des recettes traditionnelles.
         </motion.p>
 

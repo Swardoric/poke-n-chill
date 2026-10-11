@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="footer-content">
         <div className="footer-brand">🍜 Poke n Chill</div>
         <p className="footer-tagline">
-          Cuisine Vietnamienne &amp; Thaïlandaise — Paris 15e
+          Cuisine Japonaise &amp; Hawaïenne — Paris 15e
         </p>
         <div className="footer-social">
           <a href="#" aria-label="Facebook">
