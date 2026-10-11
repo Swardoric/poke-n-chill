@@ -94,13 +94,14 @@ export interface PokeBowlSize {
   base: number
   proteins: number
   legumes: number
+  toppings: number
   sauces: number
   formulaPrice: number   // PokeBowl + Boisson 33cl
 }
 
 export const POKE_SIZES: PokeBowlSize[] = [
-  { label: 'M', price: 11.9, base: 1, proteins: 1, legumes: 4, sauces: 1, formulaPrice: 12.9 },
-  { label: 'L', price: 14.9, base: 1, proteins: 2, legumes: 5, sauces: 2, formulaPrice: 15.9 },
+  { label: 'M', price: 11.9, base: 1, proteins: 1, legumes: 4, toppings: 1, sauces: 1, formulaPrice: 12.9 },
+  { label: 'L', price: 14.9, base: 1, proteins: 2, legumes: 5, toppings: 1, sauces: 2, formulaPrice: 15.9 },
 ]
 
 export const POKE_EXTRAS = [
@@ -306,7 +307,7 @@ export const BUBBLE_TEA_MILK = [
 ]
 
 export const BUBBLE_TEA_TOPPINGS = [
-  'Fraise', 'Lychee', 'Mangue', 'Myrtille', 'Pêche','passion',
+  'Fraise', 'Lychee', 'Mangue', 'Myrtille', 'Pêche', 'passion',
 ]
 
 export const BUBBLE_TEA_TOPPING_EXTRA = 0.5  // +0,50 € par topping supplémentaire
@@ -368,6 +369,6 @@ export const SIDE_ITEMS: SideItem[] = [
   },
 
   /* ── Boissons ── */
-  
- 
+
+
 ]

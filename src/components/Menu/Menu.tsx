@@ -49,6 +49,7 @@ function PokePanel() {
               <li>🍚 {size.base} base</li>
               <li>🐟 {size.proteins} protéine{size.proteins > 1 ? 's' : ''}</li>
               <li>🥬 {size.legumes} légumes</li>
+              <li>✨ {size.toppings} topping{size.toppings > 1 ? 's' : ''}</li>
               <li>🫙 {size.sauces} sauce{size.sauces > 1 ? 's' : ''}</li>
             </ul>
             <div className="poke-size-formula">
