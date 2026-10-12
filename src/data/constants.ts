@@ -1,4 +1,3 @@
-
 export const RESTAURANT = {
   name: 'Poke n Chill',
   address: '83 Rue Leblanc, 75015 Paris',
@@ -305,7 +304,10 @@ export const BUBBLE_TEA_FRUITY = [
 ]
 
 export const BUBBLE_TEA_MILK = [
-  { name: 'Brown Sugar', note: 'Perles de tapioca incluses' },
+  { name: 'Brown Sugar', note: '' },
+  { name: 'Matcha', note: '' },
+  { name: 'Taro', note: '' },
+  { name: 'Mangue', note: 'Perles de tapioca incluses' },
 ]
 
 export const BUBBLE_TEA_TOPPINGS = [
