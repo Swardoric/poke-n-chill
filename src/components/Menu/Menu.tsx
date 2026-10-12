@@ -291,7 +291,7 @@ function BubbleTeaPanel() {
 }
 
 /* ───── Panel map ───── */
-const PANELS: Record<MenuTab, () => JSX.Element> = {
+const PANELS: Record<MenuTab, () => React.ReactNode> = {
   poke: PokePanel,
   tacos: TacosPanel,
   rolls: RollsPanel,
