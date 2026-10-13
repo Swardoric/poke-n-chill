@@ -13,7 +13,7 @@ export default function Footer() {
           <a href="#" aria-label="Facebook">
             <FaFacebookF />
           </a>
-          <a href="#" aria-label="Instagram">
+          <a href="https://www.instagram.com/pokenchillbalard/" aria-label="Instagram">
             <FaInstagram />
           </a>
         </div>
