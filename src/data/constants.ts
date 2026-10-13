@@ -7,7 +7,7 @@ export const RESTAURANT = {
   mapEmbedUrl:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d656.5267330772629!2d2.2772952696801494!3d48.83709898092616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e670752ea62ad5%3A0x2323a9cfdb60459e!2s83%20Rue%20Leblanc%2C%2075015%20Paris!5e0!3m2!1sfr!2sfr!4v1784740297305!5m2!1sfr!2sfr',
   uberEatsUrl: 'https://www.ubereats.com/fr/store/poke-n-chill/IhPtizZ2S82O_M0uRzw-Eg?diningMode=DELIVERY&surfaceName=',       // ← à remplacer par le vrai lien
-  deliverooUrl: 'https://deliveroo.fr/',           // ← à remplacer par le vrai lien
+  deliverooUrl: 'https://deliveroo.fr/fr/menu/paris/Balard/bobun-520',           // ← à remplacer par le vrai lien
 }
 
 export interface Specialty {
