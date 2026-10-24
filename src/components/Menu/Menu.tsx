@@ -9,6 +9,14 @@ import {
   CROUSTY_TACO_BASE_IMAGE,
   CROUSTY_TACOS,
   SUSHI_ROLLS,
+  ONIGIRI_PRICE,
+  ONIGIRI_RICE,
+  ONIGIRI_FILLINGS,
+  INARI_PRICE,
+  INARI_BASE,
+  INARI_PROTEINS,
+  INARI_TOPPINGS,
+  INARI_SPECIALS,
   BUBBLE_TEA_PRICE,
   BUBBLE_TEA_FRUITY,
   BUBBLE_TEA_MILK,
@@ -21,12 +29,16 @@ import {
 import './Menu.css'
 
 /* ───── Tab types ───── */
-type MenuTab = 'poke' | 'tacos' | 'rolls' | 'bubble' | 'sides'
+type MenuTab = 'poke' | 'tacos' | 'rolls' | 'onigiri' | 'inari' | 'bubble' | 'sides'
+
+const fmtPrice = (n: number) => n.toFixed(2).replace('.', ',')
 
 const TABS: { key: MenuTab; label: string; emoji: string }[] = [
   { key: 'poke', label: 'Poké', emoji: '🥗' },
   { key: 'tacos', label: 'Crousty Tacos', emoji: '🌮' },
   { key: 'rolls', label: 'Rolls', emoji: '🍣' },
+  { key: 'onigiri', label: 'Onigiri', emoji: '🍙' },
+  { key: 'inari', label: 'Inari', emoji: '🍥' },
   { key: 'bubble', label: 'Bubble Tea', emoji: '🧋' },
   { key: 'sides', label: 'Desserts & Boissons', emoji: '🍨' },
 ]
@@ -155,6 +167,124 @@ function RollsPanel() {
           </div>
         </div>
       ))}
+    </div>
+  )
+}
+
+/* ───── Onigiri ───── */
+
+function OnigiriPanel() {
+  return (
+    <div className="bubble-panel">
+      <div className="bubble-price-banner">
+        <div className="bubble-banner-left">
+          <span className="bubble-banner-icon">🍙</span>
+          <div>
+            <h3 className="bubble-banner-title">Onigiri</h3>
+            <p className="bubble-banner-sub">Triangle de riz japonais fourré, à choisir parmi 12 garnitures</p>
+          </div>
+        </div>
+        <div className="bubble-banner-right">
+          <span className="bubble-banner-vol">la pièce</span>
+          <strong className="bubble-price-value">{fmtPrice(ONIGIRI_PRICE)} €</strong>
+        </div>
+      </div>
+
+      <div className="bubble-toppings">
+        <h4 className="bubble-toppings-title">
+          <span className="step-num">1</span> 🍚 Ton riz
+        </h4>
+        <div className="bubble-toppings-list">
+          {ONIGIRI_RICE.map((r) => (
+            <span key={r.name} className="composer-chip">
+              <span className="chip-name">{r.name}</span>
+              {r.extra > 0 && <span className="chip-extra">+{fmtPrice(r.extra)} €</span>}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="bubble-toppings">
+        <h4 className="bubble-toppings-title">
+          <span className="step-num">2</span> 😋 Ta garniture
+        </h4>
+        <div className="filling-grid">
+          {ONIGIRI_FILLINGS.map((f) => (
+            <div key={f.name} className="filling-item">
+              <span className="filling-emoji">{f.emoji}</span>
+              <span className="filling-name">{f.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ───── Inari ───── */
+
+function InariPanel() {
+  return (
+    <div className="bubble-panel">
+      <div className="bubble-price-banner">
+        <div className="bubble-banner-left">
+          <span className="bubble-banner-icon">🍥</span>
+          <div>
+            <h3 className="bubble-banner-title">Inari</h3>
+            <p className="bubble-banner-sub">{INARI_BASE}</p>
+          </div>
+        </div>
+        <div className="bubble-banner-right">
+          <span className="bubble-banner-vol">la pièce</span>
+          <strong className="bubble-price-value">{fmtPrice(INARI_PRICE)} €</strong>
+        </div>
+      </div>
+
+      <div className="inari-rule">
+        <span className="inari-rule-option">1 protéine + 1 topping</span>
+        <span className="inari-rule-or">ou</span>
+        <span className="inari-rule-option">2 toppings</span>
+      </div>
+
+      <div className="bubble-columns">
+        <div className="bubble-column">
+          <h3 className="bubble-column-title">🐟 Protéines</h3>
+          <div className="bubble-flavors">
+            {INARI_PROTEINS.map((p) => (
+              <span key={p.name} className="composer-chip">
+                <span className="chip-emoji">{p.emoji}</span>
+                <span className="chip-name">{p.name}</span>
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="bubble-column">
+          <h3 className="bubble-column-title">✨ Toppings</h3>
+          <div className="bubble-flavors">
+            {INARI_TOPPINGS.map((t) => (
+              <span key={t.name} className="composer-chip">
+                <span className="chip-emoji">{t.emoji}</span>
+                <span className="chip-name">{t.name}</span>
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="bubble-toppings inari-specials">
+        <h4 className="bubble-toppings-title">
+          ⭐ Inari spéciaux
+          <span className="bubble-toppings-extra">{fmtPrice(INARI_PRICE)} €</span>
+        </h4>
+        <div className="bubble-toppings-list">
+          {INARI_SPECIALS.map((s) => (
+            <span key={s.name} className="composer-chip">
+              <span className="chip-emoji">{s.emoji}</span>
+              <span className="chip-name">{s.name}</span>
+            </span>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
@@ -295,6 +425,8 @@ const PANELS: Record<MenuTab, () => React.ReactNode> = {
   poke: PokePanel,
   tacos: TacosPanel,
   rolls: RollsPanel,
+  onigiri: OnigiriPanel,
+  inari: InariPanel,
   bubble: BubbleTeaPanel,
   sides: SidesPanel,
 }

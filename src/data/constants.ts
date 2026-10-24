@@ -288,6 +288,57 @@ export const SUSHI_ROLLS: SushiRoll[] = [
   },
 ]
 
+/* ───── Onigiri ───── */
+
+export const ONIGIRI_PRICE = 3.9
+
+export const ONIGIRI_RICE = [
+  { name: 'Riz blanc', extra: 0 },
+  { name: 'Riz complet', extra: 1 },
+]
+
+export const ONIGIRI_FILLINGS: { name: string; emoji: string }[] = [
+  { name: 'Bœuf fromage', emoji: '🥩' },
+  { name: 'Poulet citronnelle', emoji: '🍗' },
+  { name: 'Saumon avocat mayo', emoji: '🥑' },
+  { name: 'Saumon mayo', emoji: '🍣' },
+  { name: 'Thon mayo', emoji: '🐟' },
+  { name: 'Thon mayo avocat', emoji: '🥑' },
+  { name: 'Thon mayo maïs', emoji: '🌽' },
+  { name: 'Surimi mayo', emoji: '🦀' },
+  { name: 'Surimi avocat mayo', emoji: '🦀' },
+  { name: 'Tamago (œuf)', emoji: '🥚' },
+  { name: 'Crevettes tempura', emoji: '🍤' },
+  { name: 'Tofu frit', emoji: '🧈' },
+]
+
+/* ───── Inari ───── */
+
+export const INARI_PRICE = 3.5
+
+export const INARI_BASE =
+  'Poche de tofu marinée, garnie de riz vinaigré, de tobiko orange et de graines de sésame.'
+
+export const INARI_PROTEINS: { name: string; emoji: string }[] = [
+  { name: 'Saumon mayo', emoji: '🍣' },
+  { name: 'Thon mayo', emoji: '🐟' },
+  { name: 'Poulet citronnelle', emoji: '🍗' },
+  { name: 'Anguille sauce eel', emoji: '🐍' },
+  { name: 'Surimi mayo', emoji: '🦀' },
+]
+
+export const INARI_TOPPINGS: { name: string; emoji: string }[] = [
+  { name: 'Avocat', emoji: '🥑' },
+  { name: 'Algue wakame', emoji: '🌊' },
+  { name: 'Maïs', emoji: '🌽' },
+  { name: 'Mangue', emoji: '🥭' },
+]
+
+export const INARI_SPECIALS: { name: string; emoji: string }[] = [
+  { name: 'Inari tofu grillé', emoji: '🔥' },
+  { name: 'Inari tamago (œuf)', emoji: '🥚' },
+]
+
 /* ───── Bubble Tea ───── */
 
 export const BUBBLE_TEA_PRICE = 5.8  // prix unique
