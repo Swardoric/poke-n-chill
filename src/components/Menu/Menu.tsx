@@ -43,12 +43,64 @@ const TABS: { key: MenuTab; label: string; emoji: string }[] = [
   { key: 'sides', label: 'Desserts & Boissons', emoji: '🍨' },
 ]
 
+/* ───── Price banner (shared) ───── */
+
+function PriceBanner({
+  icon,
+  title,
+  subtitle,
+  tag,
+  price,
+}: {
+  icon: string
+  title: string
+  subtitle: string
+  tag: string
+  price: string
+}) {
+  return (
+    <motion.div
+      className="bubble-price-banner"
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35 }}
+    >
+      <div className="bubble-banner-left">
+        <span className="bubble-banner-icon">{icon}</span>
+        <div>
+          <h3 className="bubble-banner-title">{title}</h3>
+          <p className="bubble-banner-sub">{subtitle}</p>
+        </div>
+      </div>
+      <div className="bubble-banner-right">
+        <span className="bubble-banner-vol">{tag}</span>
+        <strong className="bubble-price-value">{price}</strong>
+      </div>
+    </motion.div>
+  )
+}
+
+/** "6,90 €" si tous les prix sont identiques, sinon "dès X €" */
+function priceLabel(prices: number[]) {
+  const min = Math.min(...prices)
+  const same = prices.every((p) => p === min)
+  return same ? `${fmtPrice(min)} €` : `dès ${fmtPrice(min)} €`
+}
+
 /* ───── Poké Composition ───── */
 
 function PokePanel() {
-  const fmt = (n: number) => n.toFixed(2).replace('.', ',')
+  const fmt = fmtPrice
 
   return (
+    <div className="bubble-panel">
+    <PriceBanner
+      icon="🥗"
+      title="Poké Bowl"
+      subtitle="Compose ton bowl : base, protéine, légumes, toppings et sauce"
+      tag={POKE_SIZES.map((s) => s.label).join(' / ')}
+      price={priceLabel(POKE_SIZES.map((s) => s.price))}
+    />
     <div className="composer">
       {/* Sizes */}
       <div className="poke-sizes">
@@ -107,6 +159,7 @@ function PokePanel() {
         </div>
       ))}
     </div>
+    </div>
   )
 }
 
@@ -115,6 +168,13 @@ function PokePanel() {
 function TacosPanel() {
   return (
     <div className="tacos-panel">
+      <PriceBanner
+        icon="🌮"
+        title="Crousty Tacos"
+        subtitle="Taco croustillant enveloppé d'algue nori, garni de riz et toppings"
+        tag="la pièce"
+        price={priceLabel(CROUSTY_TACOS.map((t) => t.price))}
+      />
       {CROUSTY_TACO_BASE_IMAGE && (
         <div className="tacos-base-image">
           <img src={CROUSTY_TACO_BASE_IMAGE} alt="Crousty Taco base" />
@@ -152,6 +212,14 @@ function TacosPanel() {
 
 function RollsPanel() {
   return (
+    <div className="bubble-panel">
+    <PriceBanner
+      icon="🍣"
+      title="Sushi Rolls"
+      subtitle={`${SUSHI_ROLLS.length} rouleaux généreux et frais, au choix`}
+      tag="le roll"
+      price={priceLabel(SUSHI_ROLLS.map((r) => r.price))}
+    />
     <div className="rolls-grid">
       {SUSHI_ROLLS.map((roll) => (
         <div key={roll.id} className="roll-card">
@@ -167,6 +235,7 @@ function RollsPanel() {
           </div>
         </div>
       ))}
+    </div>
     </div>
   )
 }
