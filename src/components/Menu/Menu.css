@@ -615,6 +615,97 @@
   .bubble-columns {
     grid-template-columns: 1fr;
   }
+
+  .bubble-price-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 22px 20px;
+  }
+}
+
+/* ===== Onigiri & Inari ===== */
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--green-100);
+  color: var(--green-600);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.filling-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.filling-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--cream);
+  border: 1.5px solid var(--cream-dark);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: all 0.25s ease;
+}
+
+.filling-item:hover {
+  border-color: var(--pink-200);
+  background: var(--pink-50);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.filling-emoji {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--white);
+  font-size: 1.2rem;
+}
+
+.inari-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.inari-rule-option {
+  padding: 10px 22px;
+  border-radius: 50px;
+  background: var(--white);
+  border: 2px solid var(--green-200);
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--green-700);
+  box-shadow: var(--shadow-sm);
+}
+
+.inari-rule-or {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--pink-500);
+}
+
+.inari-specials {
+  border: 1px dashed var(--pink-200);
 }
 
 /* ===== Desserts & Boissons ===== */
