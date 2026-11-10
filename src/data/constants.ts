@@ -133,6 +133,8 @@ export const POKE_STEPS: PokeStep[] = [
       { name: 'Poulet citronnelle', emoji: '🍗' },
       { name: 'Crevettes', emoji: '🦐' },
       { name: 'Gyoza (4 pièces)', emoji: '🥟' },
+      { name: 'Mozarella', emoji: '🪸' },
+      { name: 'Tofu', emoji: '🧈' },
     ],
   },
   {
